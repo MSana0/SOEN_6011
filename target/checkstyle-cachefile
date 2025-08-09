@@ -1,0 +1,4 @@
+#Sat Aug 09 15:40:40 EDT 2025
+configuration*?=EB5FCD1B3A8D50E8D48D1F9EBB016343E03DD9BA
+module-resource*?\:checkstyle-suppressions.xml=74657AA8770B67AEC983DBE3AEF4854D4D0DF9C2
+module-resource*?\:checkstyle-xpath-suppressions.xml=706533E33865AE16B40EF926CC6D04DA057B9E16
