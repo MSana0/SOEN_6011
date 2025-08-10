@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.38.0" timestamp="2025-08-09T15:40:20.450">
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.38.0" timestamp="2025-08-10T10:24:10.461">
+<file name="D:\Concordia Uni Files\courses\Summer Term 2 2025\SOEN 6011\Deliverables\deliverable3\SOEN_6011\src\main\java\ca\concordia\gamma\GammaFunction.java">
+<violation beginline="93" endline="93" begincolumn="17" endcolumn="22" rule="UselessParentheses" ruleset="Code Style" package="ca.concordia.gamma" class="GammaFunction" method="floor" externalInfoUrl="https://pmd.github.io/pmd-6.38.0/pmd_rules_java_codestyle.html#uselessparentheses" priority="4">
+Useless parentheses.
+</violation>
+</file>
 </pmd>

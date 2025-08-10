@@ -1,3 +1,5 @@
+package ca.concordia.gamma;
+
 import java.util.Scanner;
 
 public class GammaFunction {
@@ -23,7 +25,7 @@ public class GammaFunction {
         };
 
         if (x < 0.5) {
-            return MyMath.PI() / (MyMath.mySin(MyMath.PI() * x) * gamma(1 - x));
+            return GammaFunction.PI() / (GammaFunction.mySin(GammaFunction.PI() * x) * gamma(1 - x));
         } else {
             x -= 1;
             double a = p[0];
@@ -31,7 +33,7 @@ public class GammaFunction {
                 a += p[i] / (x + i);
             }
             double t = x + g + 0.5;
-            return MyMath.mySqrt(2 * MyMath.PI()) * MyMath.myPow(t, x + 0.5) * MyMath.myExp(-t) * a;
+            return GammaFunction.mySqrt(2 * GammaFunction.PI()) * GammaFunction.myPow(t, x + 0.5) * GammaFunction.myExp(-t) * a;
         }
     }
 
