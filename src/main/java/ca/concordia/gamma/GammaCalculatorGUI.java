@@ -1,6 +1,8 @@
 package ca.concordia.gamma;
 
 import java.awt.FlowLayout;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -31,7 +33,17 @@ public class GammaCalculatorGUI extends JFrame {
         resultLabel = new JLabel("Result: ");
         add(resultLabel);
 
-        calcButton.addActionListener(e -> calculateGamma());
+        // Add KeyListener for Esc key
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+                    System.exit(0);
+                }
+            }
+        });
+        setFocusable(true);
+        requestFocusInWindow();
 
         inputField.getAccessibleContext().setAccessibleName("Input value for x");
         inputField.getAccessibleContext().setAccessibleDescription("Enter a real number for x");
