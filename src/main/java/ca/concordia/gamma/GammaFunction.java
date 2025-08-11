@@ -7,10 +7,10 @@ public class GammaFunction {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter value for x: ");
         double x = sc.nextDouble();
-        if (x <= 0 && x == floor(x)) {
-            System.out.println("Gamma function is not defined for non-positive integers.");
+        double result = gamma(x);
+        if (Double.isNaN(result)) {
+            System.out.println("Gamma function is not defined for this input.");
         } else {
-            double result = gamma(x);
             System.out.printf("Gamma(%.2f) = %.6f\n", x, result);
         }
     }
@@ -19,25 +19,22 @@ public class GammaFunction {
         if (Double.isNaN(x) || Double.isInfinite(x)) {
             return Double.NaN;
         }
+        // Undefined for non-positive integers
         if (x <= 0 && x == floor(x)) {
             return Double.NaN;
         }
-        if (x > 170) {
-            return Double.POSITIVE_INFINITY;
-        }
-        // Special cases for accuracy
+        // Special case for positive integers
         if (Math.abs(x - floor(x)) < 1e-10 && x > 0) {
-            return factorial(x - 1); // Gamma(n) = (n-1)!
-        }
-        if (Math.abs(x - 0.5) < 1e-10) {
-            return mySqrt(PI());
+            return factorial(x - 1);
         }
         // Reflection formula for negative non-integers
-        if (x < 0.5) {
+        if (x < 0) {
             return PI() / (mySin(PI() * x) * gamma(1 - x));
         }
         // Lanczos approximation for positive x
-        x -= 1;
+        if (x > 170) {
+            return Double.POSITIVE_INFINITY;
+        }
         double g = 7;
         double[] p = {
             0.99999999999980993, 676.5203681218851, -1259.1392167224028,
@@ -45,6 +42,7 @@ public class GammaFunction {
             -0.13857109526572012, 9.9843695780195716e-6,
             1.5056327351493116e-7
         };
+        x -= 1;
         double a = p[0];
         for (int i = 1; i < p.length; i++) {
             a += p[i] / (x + i);
@@ -93,7 +91,7 @@ public class GammaFunction {
         // Use a simple approximation for ln(x) for x > 0
         if (x <= 0) return Double.NaN;
         double y = (x - 1) / (x + 1);
-        double y2 = y * y;
+        //double y2 = y * y;
         double sum = 0.0;
         for (int n = 1; n < 100; n += 2) {
             sum += (1.0 / n) * Math.pow(y, n);

@@ -55,8 +55,8 @@ public class GammaCalculatorGUI extends JFrame {
         try {
             double x = Double.parseDouble(inputField.getText());
             double result = GammaFunction.gamma(x);
-            if (Double.isNaN(result) || result < 0) {
-                resultLabel.setText("Result: Gamma undefined or negative for this input.");
+            if (Double.isNaN(result)) {
+                resultLabel.setText("Result: Gamma is not defined for this input.");
             } else {
                 resultLabel.setText(String.format("Result: Gamma(%.2f) = %.6f", x, result));
             }
