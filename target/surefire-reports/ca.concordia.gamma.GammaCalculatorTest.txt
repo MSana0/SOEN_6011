@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ca.concordia.gamma.GammaCalculatorTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.366 s -- in ca.concordia.gamma.GammaCalculatorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.154 s -- in ca.concordia.gamma.GammaCalculatorTest
